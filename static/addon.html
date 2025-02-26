@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, target-densitydpi=device-dpi, initial-scale=0.8, maximum-scale=1, user-scalable=yes">
+  <title>Vanga</title>
+  <link href="css/nav.css" rel="stylesheet" />
+  <link href="css/intro.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/fonts.css" rel="stylesheet" />
+  <link href="css/tabButton.css" rel="stylesheet" />
+  <link rel='shortcut icon' type='image/x-icon' href='images/default_icon.svg' />
+</head>
+
+<body>
+  <div id="mainContainer">
+    
+    <div id="blockAccess" class="blockAccess">
+      <canvas height="5px" width="5px"></canvas>
+    </div>
+
+    <div class="column500" id="divTopNav">
+      <section class="top-nav">
+        <div id="menuHome" class="toggleIcon handCursor">
+          <div id="menuName" style="z-index: 10;">
+            <span id="reloader">Vanga</span>
+          </div>
+        </div>
+        <div id="wangaLogo"></div>
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+          <div class='menu-button' id='menu-button'>
+            <div id='menu-button-overlay'></div>
+          </div>
+        </label>
+        <ul class="menu">
+          <li class="toggleIcon handCursor" id="liRecStopAll">Stop all recorder</li>
+          <li class="toggleIcon handCursor" id="liDownload">Dump donwnloads</li>
+          <li class="toggleIcon handCursor" id="liUpdate">Update station database</li>
+          <li class="toggleIcon handCursor" id="liUpload">Upload to local database</li>
+          <li class="toggleIcon handCursor" id="liLogView" data-shown="true">show log monitor</li>
+          <li class="toggleIcon handCursor" id="liAudio" data-shown="true">show Volume</li>
+          <li class="toggleIcon handCursor" id="liSettings" data-shown="false">show Settings, Backup</li>
+          <li class="toggleIcon handCursor" id="liGit">Help, code, license repo</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="fixedPosition" id="fixedPositionAnchor"></div>
+    <canvas class="" id="lightningCanvas" width="200" height="100" style="display: none;"></canvas>
+
+    <div class="row">
+      <div class="loader" id="divLoader" style="display: none;"></div>
+      <div class="column500" id="divRowReport"></div>
+      <div class="column500" id="divRowLoaderMsg"></div>
+      <div class="column500 grid-activity-group" id="divRowActivity"></div>
+      <div class="column500" id="divRowAudio"></div>
+      <div class="column500" id="divRowVideo"></div>
+
+      <div id="divRowSettings" class="tab">
+        <button class="tablinks" id="settingsClicker">Settings</button>
+        <button class="tablinks" id="addUrlsClicker">Vanga URL add</button>
+        <button class="tablinks" id="blacklistUploadClicker">Blacklist add</button>
+        <button class="tablinks" id="blacklistDumpClicker">Blacklist dump</button>
+        <button class="tablinks" id="logHistoryClicker">Log</button>
+      </div>
+      <!-- Settings buttons -->
+      <div class="tabcontent column500 settings" id="settings"></div>
+      <div class="tabcontent column500 settings" id="urlsAdd"></div>
+      <div class="tabcontent column500 settings" id="blacklistAdd"></div>
+      <div class="tabcontent column500 settings" id="blacklistDump"></div>
+      <div class="tabcontent column500 settings" id="logHistory"></div>
+
+      <!-- DB filter buttons -->
+      <div id="continentContainer" class="column500 spacer"></div>
+      <div id="countryContainer" class="column500 spacer"></div>
+      <div id="stationContainer" class="column500 spacer"></div>
+
+      <div class="column500" id="divMain"></div>
+    </div>
+
+    <!-- use extension internal or express server for npm package -->
+    <div id="useProxy" data-value="false"></div>
+
+  </div>
+  <script type="module" src="js/index.js"></script>
+</body>
+
+</html>
